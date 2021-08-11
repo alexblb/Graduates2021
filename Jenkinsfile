@@ -18,5 +18,10 @@ pipeline {
 				}
 			}
 		}
+		stage("Download Dockerfile") {
+			steps {
+				sh "wget https://raw.githubusercontent.com/alexblb/Graduates2021/main/Dockerfile"
+			}
+		}
 	}
 }
