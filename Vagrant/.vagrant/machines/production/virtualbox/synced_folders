@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"disabled":false,"guestpath":"/vagrant","hostpath":"C:/Users/abelbu/Proiect","owner":"vagrant","mount_options":["dmode=755,fmode=755","_netdev","_netdev","_netdev","_netdev","uid=1000","gid=1000","_netdev"],"__vagrantfile":true}}}

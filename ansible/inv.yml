@@ -1,0 +1,4 @@
+jenkins.local ansible_host=192.168.1.111
+
+[jenkins]
+jenkins.local
