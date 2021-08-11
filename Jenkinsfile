@@ -11,5 +11,8 @@ pipeline {
 				git 'https://github.com/goxr3plus/Simplest-Spring-Boot-Hello-World'
 			}
 		}
+		stage("Build"){
+			sh "mvn clean install"
+		}
 	}
 }
