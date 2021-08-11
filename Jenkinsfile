@@ -13,7 +13,9 @@ pipeline {
 		}
 		stage("Build"){
 			steps{
-				sh "mvn clean install"
+				withMaven(maven: 'JenkinsMaven') {
+					sh "mvn -B clean package"
+				}
 			}
 		}
 	}
