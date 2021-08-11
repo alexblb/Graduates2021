@@ -23,5 +23,10 @@ pipeline {
 				sh "wget https://raw.githubusercontent.com/alexblb/Graduates2021/main/Dockerfile"
 			}
 		}
+		stage("Build Dockerimage") {
+			steps {
+				sh "docker build -t tomcat_grad . ; (docker save tomcat_grad > busybox.tar)"
+			}
+		}
 	}
 }
