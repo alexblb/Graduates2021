@@ -24,8 +24,10 @@ pipeline {
 			}
 		}
 		stage("SSH hello") {
-			steps {
-				sh "ssh -tt vagrant@192.168.1.112 ; echo hello ; exit"
+			sshagent(credentials: ['production']) {}
+				steps {
+					sh "ssh vagrant@192.168.1.112 'echo hello; ls -l'"
+				}
 			}
 		}
 	}
