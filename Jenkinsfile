@@ -25,7 +25,7 @@ pipeline {
 		}
 		stage("docker build") {
 			steps {
-				sh "docker build -t tomcat_grad ."
+				sh "docker build -t tomcat_grad . && docker save tomcat_grad > tomcat_grad.tar"
 			}
 		}
 	}
