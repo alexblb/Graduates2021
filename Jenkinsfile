@@ -24,10 +24,8 @@ pipeline {
 			}
 		}
 		stage("SSH hello") {
-			sshagent(credentials: ['production']) {
-				steps {
-					sh "ssh vagrant@192.168.1.112 'echo hello; ls -l'"
-				}
+			steps {
+				sh "ssh -i /var/lib/jenkins/.ssh/id_rsa vagrant@192.168.1.112 'echo hello; ls -l'"
 			}
 		}
 	}
