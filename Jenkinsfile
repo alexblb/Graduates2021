@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage("Clone Repo") {
 			steps {
-				git 'https://github.com/goxr3plus/Simplest-Spring-Boot-Hello-World'
+				git 'https://github.com/kliakos/sparkjava-war-example.git'
 			}
 		}
 		stage("Build"){
