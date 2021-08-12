@@ -25,7 +25,7 @@ pipeline {
 		}
 		stage("SSH hello") {
 			steps {
-				sh "ssh -t vagrant@192.168.1.112 ; echo hello ; exit"
+				sh "ssh -tt vagrant@192.168.1.112 ; echo hello ; exit"
 			}
 		}
 	}
