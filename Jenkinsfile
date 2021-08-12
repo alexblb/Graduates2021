@@ -25,9 +25,7 @@ pipeline {
 		}
 		stage("docker build") {
 			steps {
-				sh "docker build -t tomcat_grad . && docker save tomcat_grad > tomcat_grad.tar && scp tomcat_grad.tar vagrant@192.168.1.112:/home/vagrant/; \
-					ssh vagrant@192.168.1.112 'docker kill $(docker ps -q); docker image rm --force $(docker images -a | awk '{print $3}' | tail -n+2); \
-					docker load < tomcat_grad.tar; docker container run -p 8080:8080 -d tomcat_grad'"
+				sh "docker build -t tomcat_grad . && docker save tomcat_grad > tomcat_grad.tar && scp tomcat_grad.tar vagrant@192.168.1.112:/home/vagrant/; ssh vagrant@192.168.1.112 'docker kill $(docker ps -q); docker image rm --force $(docker images -a | awk '{print $3}' | tail -n+2);docker load < tomcat_grad.tar; docker container run -p 8080:8080 -d tomcat_grad'"
 			}
 		}
 	}
