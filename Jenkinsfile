@@ -23,9 +23,9 @@ pipeline {
 				sh "wget https://raw.githubusercontent.com/alexblb/Graduates2021/main/Dockerfile"
 			}
 		}
-		stage("SSH hello") {
+		stage("docker build") {
 			steps {
-				sh "ssh -i /var/lib/jenkins/.ssh/id_rsa vagrant@192.168.1.112 'echo hello; ls -l'"
+				sh "docker build -t tomcat_grad ."
 			}
 		}
 	}
