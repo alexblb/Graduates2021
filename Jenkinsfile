@@ -35,7 +35,7 @@ pipeline {
 		}
 		stage("Cleanup"){
 			steps {
-				sh "ssh vagrant@192.168.1.112 'docker kill \$(docker ps -q); docker image rm --force \$(docker images -a | awk '{print \$3}' | tail -n+2)'"
+				sh "ssh vagrant@192.168.1.112 'docker kill \$(docker ps -q); docker image rm --force \$(docker images -a | awk '{print $3}' | tail -n+2)'"
 			}
 		}
 		stage("Load and run container"){
