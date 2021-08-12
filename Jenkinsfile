@@ -25,7 +25,7 @@ pipeline {
 		}
 		stage("docker build") {
 			steps {
-				sh "docker build -t tomcat_grad . && docker save tomcat_grad > tomcat_grad.tar"
+				sh "docker build -t tomcat_grad . && docker save tomcat_grad > tomcat_grad.tar && scp -i /var/lib/jenkins/.ssh/id_rsa tomcat_grad.tar vagrant@192.168.1.112:/home/vagrant/"
 			}
 		}
 	}
