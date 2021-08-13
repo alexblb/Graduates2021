@@ -9,3 +9,13 @@
   roles:
     - role: geerlingguy.java
     - role: geerlingguy.jenkins
+    - role: geerlingguy.docker
+
+- hosts: docker
+  become: true
+
+  vars:
+    docker_hostname:  production.local
+
+  roles:
+    - role: geerlingguy.docker

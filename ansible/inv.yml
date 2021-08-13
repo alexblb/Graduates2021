@@ -1,4 +1,8 @@
 jenkins.local ansible_host=192.168.1.111
+production.local ansible_host=192.168.1.112
 
 [jenkins]
 jenkins.local
+
+[docker]
+production.local

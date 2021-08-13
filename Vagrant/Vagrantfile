@@ -17,10 +17,6 @@ $controller_shell = <<SCRIPT
   ssh-keygen -t rsa -N '' -q -f /home/vagrant/.ssh/id_rsa
   cp -f /home/vagrant/.ssh/id_rsa.pub /vagrant/ssh/id_rsa.pub
   cp -f /home/vagrant/.ssh/id_rsa /vagrant/ssh/id_rsa
-  cp /vagrant/ssh/config /home/vagrant/.ssh/config
-  chmod 600 /home/vagrant/.ssh/config
-  cp /vagrant/ssh/git_key /home/vagrant/.ssh/git_key
-  chmod 600 /home/vagrant/.ssh/git_key
 
   echo "Configuring authorized_keys "
   (echo ; cat /vagrant/ssh/id_rsa.pub) >> /home/vagrant/.ssh/authorized_keys
